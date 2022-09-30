@@ -6,7 +6,6 @@ const createAddressTable = '''
   ,zip_code CHAR(3) 
   ,street_address VARCHAR(500) 
   ,street_address_number CHAR(8) 
-  ,complement VARCHAR(200)
   ,long CHAR(15)
   ,lat CHAR(15)
   )
