@@ -33,25 +33,29 @@ class AddressDAOImp implements AddressDAO {
     String sql;
     if (address.id == null) {
       sql =
-          '''INSERT INTO address(city,state,zip_code,street_address,street_address_number,complement)VALUES(?,?,?,?,?,?)''';
+          '''INSERT INTO address(city,state,zip_code,street_address,street_address_number,complement,long,lat)VALUES(?,?,?,?,?,?,?,?)''';
       address.id = await _db!.rawInsert(sql, [
         address.city,
         address.state,
         address.zipCode,
         address.streetAddress,
         address.streetAddressNumber,
+        address.long,
+        address.lat,
       ]);
       return address;
     } else {
       sql =
-          '''UPDATE address SET city = ?,state = ?, zip_code = ?, street_address = ?, street_address_number = ?,complement = ? WHERE id = ?''';
+          '''UPDATE address SET city = ?,state = ?, zip_code = ?, street_address = ?, street_address_number = ?,complement = ?,long = ?,lat = ? WHERE id = ?''';
       await _db!.rawUpdate(sql, [
         address.city,
         address.state,
         address.zipCode,
         address.streetAddress,
         address.streetAddressNumber,
-        address.id
+        address.id,
+        address.long,
+        address.lat
       ]);
       return address;
     }
