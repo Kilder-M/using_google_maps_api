@@ -3,7 +3,7 @@ import 'package:using_google_maps_api/app/data/dao/address_dao_imp.dart';
 import 'package:using_google_maps_api/app/domain/interfaces/address_dao.dart';
 import 'package:using_google_maps_api/app/domain/services/address_service.dart';
 
-setupInjectio() {
+setupInjection() {
   GetIt getIt = GetIt.I;
 
   getIt.registerSingleton<AddressDAO>(AddressDAOImp());
