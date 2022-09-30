@@ -56,5 +56,24 @@ void main() {
 
       expect(response.id, equals(1));
     });
+
+    test('Should return an address entity that was saved', () async {
+      final addressEntity = AddressEntity(
+        id: 1,
+        city: 'city test',
+        lat: '123123123',
+        long: '-1231231',
+        state: 'state test',
+        zipCode: '11111-111',
+        streetAddress: 'rua test ',
+        streetAddressNumber: '123',
+      );
+      when(() => addressDAOImp.save(addressEntity))
+          .thenAnswer((_) async => addressEntity);
+
+      final response = await addressDAOImp.save(addressEntity);
+
+      expect(response.id, equals(addressEntity.id));
+    });
   });
 }
