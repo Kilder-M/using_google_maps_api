@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:using_google_maps_api/app/modules/home/controllers/home_controller.dart';
-import 'package:using_google_maps_api/app/modules/home/widgets/home_view_list_tile.dart';
+import 'package:using_google_maps_api/app/aplication/modules/home/controllers/home_controller.dart';
+import 'package:using_google_maps_api/app/aplication/modules/home/widgets/home_view_list_tile.dart';
 
 Widget homeViewFutureAddressList(HomeController controller) {
   return Expanded(
