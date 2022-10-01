@@ -1,15 +1,13 @@
 import 'package:flutter/material.dart';
 
-GestureDetector homeViewTextField(void Function()? onTap) {
-  return GestureDetector(
-    onTap: onTap,
-    child: SizedBox(
-      child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 3.0),
-        child: TextField(
-          readOnly: true,
-          decoration: inputDecoratorOfTextField(),
-        ),
+Widget homeViewTextField({void Function()? onTap}) {
+  return SizedBox(
+    child: Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 3.0),
+      child: TextField(
+        readOnly: true,
+        onTap: onTap,
+        decoration: inputDecoratorOfTextField(),
       ),
     ),
   );
