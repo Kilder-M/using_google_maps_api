@@ -5,7 +5,7 @@ ListTile homeViewListTile({String? title, subtitle}) {
     title: Text(title!),
     subtitle: Text(subtitle),
     leading: const CircleAvatar(
-      child: Icon(Icons.map_outlined),
+      child: Icon(Icons.location_on_outlined),
     ),
     trailing: Column(
       mainAxisAlignment: MainAxisAlignment.start,
