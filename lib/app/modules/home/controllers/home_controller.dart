@@ -1,23 +1,18 @@
 import 'package:get/get.dart';
+import 'package:get_it/get_it.dart';
+import 'package:using_google_maps_api/app/domain/entities/address_entity.dart';
+import 'package:using_google_maps_api/app/domain/interfaces/address_dao.dart';
 
 class HomeController extends GetxController {
-  //TODO: Implement HomeController
+  final _dao = GetIt.I<AddressDAO>();
 
-  final count = 0.obs;
-  @override
-  void onInit() {
-    super.onInit();
+  var addressList = <AddressEntity>[].obs;
+
+  Future<List<AddressEntity>> getAddressList() async {
+    return addressList.value = await _dao.getList();
   }
 
-  @override
-  void onReady() {
-    super.onReady();
+  removeAddress(AddressEntity addressEntity) {
+    _dao.remove(addressEntity.id!);
   }
-
-  @override
-  void onClose() {
-    super.onClose();
-  }
-
-  void increment() => count.value++;
 }
