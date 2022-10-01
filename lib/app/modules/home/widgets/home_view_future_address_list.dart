@@ -21,7 +21,7 @@ Widget homeViewFutureAddressList(HomeController controller) {
             ),
           );
         } else {
-          return controller.addressList.isNotEmpty
+          return controller.addressList.isEmpty
               ? const Center(
                   child: Text(
                     'Não existem endereços salvos.',
