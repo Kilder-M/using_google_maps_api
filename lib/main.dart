@@ -2,10 +2,13 @@ import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
 import 'package:using_google_maps_api/app/utils/setup_injections.dart';
+import 'package:flutter_config/flutter_config.dart';
 
 import 'app/routes/app_pages.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await FlutterConfig.loadEnvVariables();
   setupInjection();
   runApp(
     GetMaterialApp(
