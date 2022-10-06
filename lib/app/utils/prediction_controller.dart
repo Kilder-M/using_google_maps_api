@@ -11,23 +11,31 @@ class PredictionController {
       context: context,
       apiKey: FlutterConfig.get('MAPS_API_KEY'),
       mode: Mode.overlay,
+      logo: const SizedBox(),
       language: 'pt',
       strictbounds: false,
       types: [''],
       components: [Component(Component.country, 'br')],
       onError: _predictionError,
-      decoration: InputDecoration(
-        hintText: 'Digite o CEP',
-        focusedBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(50.0),
-          borderSide: const BorderSide(
-            width: 0.5,
-            color: Colors.white,
-          ),
-        ),
-      ),
+      overlayBorderRadius: BorderRadius.circular(25),
+      decoration: inputDecorator(),
     );
     return prediction;
+  }
+
+  InputDecoration inputDecorator() {
+    return InputDecoration(
+      hintStyle: const TextStyle(fontWeight: FontWeight.w500),
+      fillColor: Colors.white,
+      hintText: 'Pesquisar',
+      filled: true,
+      focusedBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(50.0),
+          borderSide: BorderSide.none),
+      border: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(50.0),
+          borderSide: BorderSide.none),
+    );
   }
 
   Future<void> _predictionError(
