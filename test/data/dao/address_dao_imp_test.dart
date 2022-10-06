@@ -31,20 +31,6 @@ void main() {
       expect(response.id, equals(1));
     });
 
-    test('Should return an address entity that contains the correct id',
-        () async {
-      final addressEntity = AddressEntity(
-        id: 1,
-        address: 'Rua test 1 - bairro - brasil',
-      );
-      when(() => addressDAOImp.getById(1))
-          .thenAnswer((_) async => addressEntity);
-
-      final response = await addressDAOImp.getById(1);
-
-      expect(response.id, equals(1));
-    });
-
     test('Should return an address entity that was saved', () async {
       final addressEntity = AddressEntity(
         id: 1,
