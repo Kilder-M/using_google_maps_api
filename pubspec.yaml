@@ -17,7 +17,6 @@ dependencies:
   flutter_config: ^2.0.0
   google_maps_flutter: ^2.2.1
   google_maps_webservice: ^0.0.19
-  geolocator: ^9.0.2
   path: ^1.8.2
   flutter: 
     sdk: flutter
