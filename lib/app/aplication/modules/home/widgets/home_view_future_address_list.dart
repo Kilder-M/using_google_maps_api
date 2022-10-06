@@ -34,8 +34,11 @@ Widget homeViewFutureAddressList(HomeController controller) {
                   itemCount: controller.addressList.length,
                   itemBuilder: ((context, index) {
                     var address = controller.addressList[index];
-                    return homeViewListTile(
-                      title: address.address,
+                    return Padding(
+                      padding: const EdgeInsets.fromLTRB(8, 0, 8, 8),
+                      child: homeViewListTile(
+                        title: address.address,
+                      ),
                     );
                   }),
                 );
