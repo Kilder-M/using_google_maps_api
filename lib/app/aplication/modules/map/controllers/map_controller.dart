@@ -1,11 +1,18 @@
 import 'package:get/get.dart';
+import 'package:get_it/get_it.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:google_maps_webservice/places.dart';
+import 'package:using_google_maps_api/app/domain/entities/address_entity.dart';
+import 'package:using_google_maps_api/app/domain/services/address_service.dart';
 import 'package:using_google_maps_api/app/utils/map_initial_camera_position.dart';
 import 'package:using_google_maps_api/app/utils/prediction_controller.dart';
 
 class MapController extends GetxController {
   late GoogleMapController googleMapController;
+  var addressEntity = AddressEntity().obs;
+  final _addressService = GetIt.I<AddressService>();
+
+  var isLoading = false.obs;
 
   var initialCameraPosition = MapInitialCameraPosition().cameraPosition;
 
@@ -17,6 +24,13 @@ class MapController extends GetxController {
 
   Future<PlacesDetailsResponse> getPlacesDetails(Prediction? prediction) async {
     return await PredictionController().getPlacesDetails(prediction!);
+  }
+
+  saveAddress() async {
+    isLoading.value = true;
+    await _addressService.save(addressEntity.value);
+    isLoading.value = false;
+    addressEntity.value = AddressEntity();
   }
 
   setNewMaker(
