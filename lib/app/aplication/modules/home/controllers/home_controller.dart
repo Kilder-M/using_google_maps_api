@@ -12,7 +12,8 @@ class HomeController extends GetxController {
     return addressList.value = await _service.getList();
   }
 
-  removeAddress(AddressEntity addressEntity) {
-    _service.remove(addressEntity.id!);
+  removeAddress(AddressEntity addressEntity) async {
+    await _service.remove(addressEntity.id!);
+    await getAddressList();
   }
 }

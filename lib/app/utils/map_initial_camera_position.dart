@@ -9,6 +9,6 @@ class MapInitialCameraPosition {
           initialLat,
           initialng,
         ),
-        zoom: 4,
+        zoom: 5,
       );
 }
