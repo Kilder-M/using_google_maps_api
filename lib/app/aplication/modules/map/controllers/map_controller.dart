@@ -9,13 +9,11 @@ import 'package:using_google_maps_api/app/utils/prediction_controller.dart';
 
 class MapController extends GetxController {
   late GoogleMapController googleMapController;
-  var addressEntity = AddressEntity().obs;
   final _addressService = GetIt.I<AddressService>();
+  final initialCameraPosition = MapInitialCameraPosition().cameraPosition;
 
+  var addressEntity = AddressEntity().obs;
   var isLoading = false.obs;
-
-  var initialCameraPosition = MapInitialCameraPosition().cameraPosition;
-
   var markerList = <Marker>{}.obs;
 
   Future<Prediction?> getPrediction(context) async {
