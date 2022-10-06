@@ -1,23 +1,40 @@
 import 'package:get/get.dart';
+import 'package:google_maps_flutter/google_maps_flutter.dart';
+import 'package:google_maps_webservice/places.dart';
+import 'package:using_google_maps_api/app/utils/map_initial_camera_position.dart';
+import 'package:using_google_maps_api/app/utils/prediction_controller.dart';
 
 class MapController extends GetxController {
-  //TODO: Implement MapController
+  late GoogleMapController googleMapController;
 
-  final count = 0.obs;
-  @override
-  void onInit() {
-    super.onInit();
+  var initialCameraPosition = MapInitialCameraPosition().cameraPosition;
+
+  var markerList = <Marker>{}.obs;
+
+  Future<Prediction?> getPrediction(context) async {
+    return await PredictionController().getPrediction(context);
   }
 
-  @override
-  void onReady() {
-    super.onReady();
+  Future<PlacesDetailsResponse> getPlacesDetails(Prediction? prediction) async {
+    return await PredictionController().getPlacesDetails(prediction!);
   }
 
-  @override
-  void onClose() {
-    super.onClose();
+  setNewMaker(
+      {required double lng,
+      required double lat,
+      required PlacesDetailsResponse placesDetails}) {
+    markerList.clear();
+    markerList.add(
+      Marker(
+        markerId: const MarkerId('0'),
+        position: LatLng(
+          lat,
+          lng,
+        ),
+        infoWindow: InfoWindow(
+          title: placesDetails.result.name,
+        ),
+      ),
+    );
   }
-
-  void increment() => count.value++;
 }
