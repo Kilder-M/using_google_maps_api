@@ -7,13 +7,7 @@ void main() {
     setUp(() {
       addressEntity = AddressEntity(
         id: 1,
-        city: 'city test',
-        lat: '123123123',
-        long: '-1231231',
-        state: 'state test',
-        zipCode: '11111-111',
-        streetAddress: 'rua test ',
-        streetAddressNumber: '123',
+        address: 'Rua test 1 - bairro - brasil',
       );
     });
 

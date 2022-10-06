@@ -21,13 +21,7 @@ void main() {
         () async {
       final addressEntity = AddressEntity(
         id: 1,
-        city: 'city test',
-        lat: '123123123',
-        long: '-1231231',
-        state: 'state test',
-        zipCode: '11111-111',
-        streetAddress: 'rua test ',
-        streetAddressNumber: '123',
+        address: 'Rua test 1 - bairro - brasil',
       );
       when(() => addressDAOImp.getById(1))
           .thenAnswer((_) async => addressEntity);
@@ -41,13 +35,7 @@ void main() {
         () async {
       final addressEntity = AddressEntity(
         id: 1,
-        city: 'city test',
-        lat: '123123123',
-        long: '-1231231',
-        state: 'state test',
-        zipCode: '11111-111',
-        streetAddress: 'rua test ',
-        streetAddressNumber: '123',
+        address: 'Rua test 1 - bairro - brasil',
       );
       when(() => addressDAOImp.getById(1))
           .thenAnswer((_) async => addressEntity);
@@ -60,13 +48,7 @@ void main() {
     test('Should return an address entity that was saved', () async {
       final addressEntity = AddressEntity(
         id: 1,
-        city: 'city test',
-        lat: '123123123',
-        long: '-1231231',
-        state: 'state test',
-        zipCode: '11111-111',
-        streetAddress: 'rua test ',
-        streetAddressNumber: '123',
+        address: 'Rua test 1 - bairro - brasil',
       );
       when(() => addressDAOImp.save(addressEntity))
           .thenAnswer((_) async => addressEntity);

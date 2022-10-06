@@ -32,31 +32,14 @@ class AddressDAOImp implements AddressDAO {
     _db = await DBConnection.getConnection();
     String sql;
     if (address.id == null) {
-      sql =
-          '''INSERT INTO address(city,state,zip_code,street_address,street_address_number,complement,long,lat)VALUES(?,?,?,?,?,?,?,?)''';
+      sql = '''INSERT INTO address(address)VALUES(?)''';
       address.id = await _db!.rawInsert(sql, [
-        address.city,
-        address.state,
-        address.zipCode,
-        address.streetAddress,
-        address.streetAddressNumber,
-        address.long,
-        address.lat,
+        address.address,
       ]);
       return address;
     } else {
-      sql =
-          '''UPDATE address SET city = ?,state = ?, zip_code = ?, street_address = ?, street_address_number = ?,complement = ?,long = ?,lat = ? WHERE id = ?''';
-      await _db!.rawUpdate(sql, [
-        address.city,
-        address.state,
-        address.zipCode,
-        address.streetAddress,
-        address.streetAddressNumber,
-        address.id,
-        address.long,
-        address.lat
-      ]);
+      sql = '''UPDATE address SET address = ? WHERE id = ?''';
+      await _db!.rawUpdate(sql, [address.address]);
       return address;
     }
   }

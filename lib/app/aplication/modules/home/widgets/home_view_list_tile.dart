@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 
-ListTile homeViewListTile({String? title, subtitle}) {
+ListTile homeViewListTile({
+  String? title,
+}) {
   return ListTile(
     title: Text(title!),
-    subtitle: Text(subtitle),
     leading: const CircleAvatar(
       child: Icon(Icons.location_on_outlined),
     ),

@@ -35,8 +35,7 @@ Widget homeViewFutureAddressList(HomeController controller) {
                   itemBuilder: ((context, index) {
                     var address = controller.addressList[index];
                     return homeViewListTile(
-                      title: address.streetAddress,
-                      subtitle: address.zipCode,
+                      title: address.address,
                     );
                   }),
                 );

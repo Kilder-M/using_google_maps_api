@@ -8,9 +8,11 @@ class DBConnection {
   static Future<Database> getConnection() async {
     if (_db == null) {
       String path = join(await getDatabasesPath(), 'address_db');
+      deleteDatabase(path);
       return _db =
           await openDatabase(path, version: 1, onCreate: (db, v) async {
         await db.execute(createAddressTable);
+        await db.rawInsert(createAddress);
       });
     }
     return _db!;
