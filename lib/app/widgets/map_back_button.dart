@@ -17,8 +17,8 @@ class MapBackButton extends StatelessWidget {
     return GestureDetector(
       onTap: onTap,
       child: Container(
-        height: height ?? 40,
-        width: width ?? 40,
+        height: height ?? 42,
+        width: width ?? 42,
         decoration: BoxDecoration(
           color: backgroundColor ?? Colors.white,
           shape: BoxShape.circle,
@@ -26,7 +26,7 @@ class MapBackButton extends StatelessWidget {
         child: Center(
           child: Icon(
             Icons.chevron_left_rounded,
-            size: 32,
+            size: 35,
             color: iconColor ?? Colors.black,
           ),
         ),
