@@ -3,14 +3,14 @@ part of 'app_pages.dart';
 
 abstract class Routes {
   Routes._();
-  static const HOME = _Paths.HOME;
-  static const MAP = _Paths.MAP;
-  static const SPLASH = _Paths.SPLASH + _Paths.SPLASH;
+  static const home = _Paths.home;
+  static const map = _Paths.map;
+  static const splash = _Paths.splash + _Paths.splash;
 }
 
 abstract class _Paths {
   _Paths._();
-  static const HOME = '/home';
-  static const MAP = '/map';
-  static const SPLASH = '/splash';
+  static const home = '/home';
+  static const map = '/map';
+  static const splash = '/splash';
 }
