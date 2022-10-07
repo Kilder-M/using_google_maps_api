@@ -16,6 +16,7 @@ Conceitos e ferramentas utilizadas:
 - Clean Code
 - Injeção de dependencias
 - Testes Unitários
+- MockTail
 - SOLID
 - POO
 - Padrao de projeto DAO
