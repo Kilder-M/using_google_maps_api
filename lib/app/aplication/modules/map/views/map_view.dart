@@ -26,7 +26,11 @@ class MapView extends GetView<MapController> {
                 Obx(
                   () => googleMap(),
                 ),
-                rowTextField(context: context, onTap: Get.back),
+                rowTextField(
+                    context: context,
+                    onTap: () {
+                      Get.offAllNamed('/home');
+                    }),
               ],
             ),
             bottomContainer(context)
