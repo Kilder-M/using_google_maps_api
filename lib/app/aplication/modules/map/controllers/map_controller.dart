@@ -4,8 +4,8 @@ import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:google_maps_webservice/places.dart';
 import 'package:using_google_maps_api/app/domain/entities/address_entity.dart';
 import 'package:using_google_maps_api/app/domain/services/address_service.dart';
-import 'package:using_google_maps_api/app/utils/map_initial_camera_position.dart';
-import 'package:using_google_maps_api/app/utils/prediction_controller.dart';
+import 'package:using_google_maps_api/utils/map_initial_camera_position.dart';
+import 'package:using_google_maps_api/utils/prediction_controller.dart';
 
 class MapController extends GetxController {
   late GoogleMapController googleMapController;
