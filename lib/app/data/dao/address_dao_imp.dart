@@ -9,7 +9,8 @@ class AddressDAOImp implements AddressDAO {
   @override
   Future<List<AddressEntity>> getList() async {
     _db = await DBConnection.getConnection();
-    List<Map<String, dynamic>> queryResult = await _db!.query('address');
+    List<Map<String, dynamic>> queryResult =
+        await _db!.query('address', orderBy: '-id');
     List<AddressEntity> addressList =
         List.generate(queryResult.length, (index) {
       var row = queryResult[index];
