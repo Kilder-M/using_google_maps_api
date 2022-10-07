@@ -27,7 +27,7 @@ class PredictionController {
     return InputDecoration(
       hintStyle: const TextStyle(fontWeight: FontWeight.w500),
       fillColor: Colors.white,
-      hintText: 'Pesquisar',
+      hintText: 'Digite o CEP',
       filled: true,
       focusedBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(50.0),
