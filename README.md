@@ -1,7 +1,7 @@
 # using_google_maps_api
 
 
-O projeto tem como objetivo realizar uma pesquisa de endereço no maps por CEP para ver o local pesquisado. Além disso, ser possível salvar esse endereços. Assim como, também, listalos e excluílos.
+O projeto tem como objetivo realizar uma pesquisa de endereço no maps por CEP para ver o local pesquisado. Além disso, ser possível salvar esses endereços. Assim como, também, listalos e excluílos.
 
 Para fazer as requisições, pesquisas relacionadas a endereços e pesquisas no mapa, foi utilizado a API do google através das lib:
 
